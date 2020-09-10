@@ -1,8 +1,9 @@
 #include<iostream>
+#include "hello.h"
 
 int main() 
 {
-	std::cout<<"Hello World!";
+	hello_world();
 	
 	return 0;
 }

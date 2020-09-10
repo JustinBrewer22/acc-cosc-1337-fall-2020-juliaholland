@@ -2,6 +2,6 @@
 
 void hello_world()
 {
-    std::cout<<"Hello World C++!";
+    std::cout<<"Hello World CPP!";
 }
 

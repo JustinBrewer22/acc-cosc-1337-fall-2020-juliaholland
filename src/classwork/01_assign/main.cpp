@@ -2,11 +2,8 @@
 #include<iostream>
 #include "types.h"
 
-using std::cout; using std::cin;
-
 //Write include for capturing input from keyboard and displaying output to screen
-
-
+using std::cout; using std::cin;
 
 int main() 
 {

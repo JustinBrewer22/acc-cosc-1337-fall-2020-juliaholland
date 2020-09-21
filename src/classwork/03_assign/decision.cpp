@@ -41,8 +41,10 @@ string get_letter_grade_using_switch(int grade){
         break;
     case 7:
         return "C";
+        break;
     case 6:
         return "D";
+        break;
     default:   
         return "F";
     }

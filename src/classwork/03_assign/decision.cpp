@@ -4,10 +4,12 @@
 
 using std::string;
 
-string letterGrade;
+
 
 string get_letter_grade_using_if(int grade)
 {
+    string letterGrade;
+    
     if (grade>=90 && grade<=100) {
          letterGrade = "A";
     }

@@ -47,8 +47,15 @@ string get_letter_grade_using_switch(int grade){
     case 6:
         return "D";
         break;
-    default:   
-        return "F";
+    case 5:
+     case 4:
+     case 3:
+     case 2:
+     case 1:
+     case 0:
+         return "F";		   
+     default:   
+         return "Invalid grade";
     }
 
 }

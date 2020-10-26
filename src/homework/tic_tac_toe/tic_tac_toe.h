@@ -15,19 +15,14 @@ class TicTacToe {
 
     public: 
         bool game_over();
-    public:
         void start_game(string first_player);
-    public:
         void mark_board(int postion);
-    public: 
         string get_player() const;
-    public:
         void display_board() const;
+
     private:
         void set_next_player();
-    private:
         bool check_board_full();
-    private:
         void clear_board();
 };
 #endif 

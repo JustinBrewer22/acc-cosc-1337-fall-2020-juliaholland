@@ -8,10 +8,6 @@ using std::string; using std::vector;
 using std::cout; using std::cin;
 
 
-string player;
-
-std::vector<std::string const> pegs;
-
 bool TicTacToe::game_over(){
     return check_board_full();
 };

@@ -25,23 +25,19 @@ bool TicTacToe::game_over(){
 };
 
 void TicTacToe::start_game(string first_player){
-    player = first_player;
+    next_player = first_player;
     clear_board();
 };
 
 void TicTacToe::mark_board(int postion){
-    pegs[postion - 1] = player;
-    
-    set_next_player();
+    pegs[postion - 1] = next_player;
+
+    if (game_over() == false) {
+        set_next_player();
+    }
 };
 std::string TicTacToe::get_player()const{
-    return player;
-};
-void TicTacToe::display_board() const{
-    cout<<pegs[0]<<"|"<<pegs[1]<<"|"<<pegs[2]<<"\n";
-    cout<<pegs[3]<<"|"<<pegs[4]<<"|"<<pegs[5]<<"\n";
-    cout<<pegs[6]<<"|"<<pegs[7]<<"|"<<pegs[8]<<"\n";
-
+    return next_player;
 };
 
 string TicTacToe::get_winner(){
@@ -87,24 +83,25 @@ bool TicTacToe::check_diagonal_win(){
     }
 };
 void TicTacToe::set_winner(){
-    if (player == "X" || player == "x")
+    
+    if (next_player == "X")
     {
-        winner = "O";
+        winner = "X";
     }
     else 
     {
-        winner = "X";
+        winner = "O";
     }
 };
 
 void TicTacToe::set_next_player(){
-    if(player == "X" || player == "x")
+    if(next_player == "X")
     {
-        player = "O";
+        next_player = "O";
     }
     else 
     {
-        player = "X";
+        next_player = "X";
     }
 };
 
@@ -124,3 +121,15 @@ void TicTacToe::clear_board(){
     pegs[i] = " ";
     }
 };
+
+void operator>>(std::istream& in, TicTacToe& ttt){
+	int choice;
+        cout<<"Enter your number from 1-9: ";
+		cin>>choice;
+		ttt.mark_board(choice);				
+};
+void operator<<(std::ostream& out, TicTacToe& ttt) {
+    cout<<ttt.pegs[0]<<"|"<<ttt.pegs[1]<<"|"<<ttt.pegs[2]<<"\n";
+    cout<<ttt.pegs[3]<<"|"<<ttt.pegs[4]<<"|"<<ttt.pegs[5]<<"\n";
+    cout<<ttt.pegs[6]<<"|"<<ttt.pegs[7]<<"|"<<ttt.pegs[8]<<"\n";
+}

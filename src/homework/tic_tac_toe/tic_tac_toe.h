@@ -11,6 +11,7 @@ class TicTacToe {
     private: 
         string player;
         string winner;
+        string next_player;
         
     std::vector<std::string> pegs = {9," "};
 
@@ -19,8 +20,9 @@ class TicTacToe {
         void start_game(string first_player);
         void mark_board(int postion);
         string get_player() const;
-        void display_board() const;
         string get_winner();
+        friend void operator<<(std::ostream& out, TicTacToe& ttt);
+        friend void operator>>(std::istream& in, TicTacToe& ttt);
 
     private:
         void set_next_player();

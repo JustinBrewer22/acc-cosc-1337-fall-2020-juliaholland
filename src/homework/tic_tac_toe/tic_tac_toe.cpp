@@ -45,42 +45,13 @@ string TicTacToe::get_winner(){
 };
 
 bool TicTacToe::check_column_win(){
-    if ((pegs[0] == "X" && pegs[3]=="X" && pegs[6]=="X") || (pegs[0] == "O" && pegs[3]=="O" && pegs[6]=="O"))
-    {
-        return true;
-    }
-    else if ((pegs[1] == "X" && pegs[4]=="X" && pegs[7]=="X") || (pegs[1] == "O" && pegs[4]=="O" && pegs[7]=="O"))
-    {
-        return true;
-    }
-     else if ((pegs[2] == "X" && pegs[5]=="X" && pegs[8]=="X") || (pegs[2] == "O" && pegs[5]=="O" && pegs[8]=="O"))
-    {
-        return true;
-    }    
+    return false;   
 };
 bool TicTacToe::check_row_win(){
-    if ((pegs[0] == "X" && pegs[1]=="X" && pegs[2]=="X") || (pegs[0] == "O" && pegs[1]=="O" && pegs[2]=="O"))
-    {
-        return true;
-    }
-     else if ((pegs[3] == "X" && pegs[4]=="X" && pegs[5]=="X") || (pegs[3] == "O" && pegs[4]=="O" && pegs[5]=="O"))
-    {
-        return true;
-    }
-     else if ((pegs[6] == "X" && pegs[7]=="X" && pegs[8]=="X") || (pegs[6] == "O" && pegs[7]=="O" && pegs[8]=="O"))
-    {
-        return true;
-    }
+    return false;
 };
 bool TicTacToe::check_diagonal_win(){
-    if ((pegs[0] == "X" && pegs[4]=="X" && pegs[8]=="X") || (pegs[0] == "O" && pegs[4]=="O" && pegs[8]=="O"))
-    {
-        return true;
-    }
-    else if ((pegs[2] == "X" && pegs[4]=="X" && pegs[6]=="X") || (pegs[2] == "O" && pegs[4]=="O" && pegs[6]=="O"))
-    {
-        return true;
-    }
+    return false;
 };
 void TicTacToe::set_winner(){
     
@@ -129,7 +100,15 @@ void operator>>(std::istream& in, TicTacToe& ttt){
 		ttt.mark_board(choice);				
 };
 void operator<<(std::ostream& out, TicTacToe& ttt) {
+    if (ttt.pegs.size() == 9){
     cout<<ttt.pegs[0]<<"|"<<ttt.pegs[1]<<"|"<<ttt.pegs[2]<<"\n";
     cout<<ttt.pegs[3]<<"|"<<ttt.pegs[4]<<"|"<<ttt.pegs[5]<<"\n";
     cout<<ttt.pegs[6]<<"|"<<ttt.pegs[7]<<"|"<<ttt.pegs[8]<<"\n";
-}
+    }
+    else if (ttt.pegs.size() == 16) {
+    cout<<ttt.pegs[0]<<"|"<<ttt.pegs[1]<<"|"<<ttt.pegs[2]<<ttt.pegs[3]<<"\n";
+    cout<<ttt.pegs[4]<<"|"<<ttt.pegs[5]<<"|"<<ttt.pegs[6]<<ttt.pegs[7]<<"\n";
+    cout<<ttt.pegs[8]<<"|"<<ttt.pegs[9]<<"|"<<ttt.pegs[10]<<ttt.pegs[11]<<"\n";
+    cout<<ttt.pegs[12]<<"|"<<ttt.pegs[13]<<"|"<<ttt.pegs[14]<<ttt.pegs[115]<<"\n";
+    }
+};

@@ -23,8 +23,9 @@ TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE (ttt.game_over() == TRUE);
 }*/
 
-TEST_CASE("Verify Tictactoe v2"){
-	std::unique_ptr<TicTacToe3> ttt;
+TEST_CASE("Verify Tictactoe3"){
+	std::unique_ptr<TicTacToe> ttt;
+	ttt = std::make_unique<TicTacToe3>();
 	ttt->start_game("X");
 	REQUIRE(ttt->get_player()=="X");
 	ttt->start_game("O");
@@ -53,8 +54,9 @@ TEST_CASE("Verify Tictactoe v2"){
 	REQUIRE(ttt->get_winner() == "C");
 }
 
-TEST_CASE("Test win by first column"){
-	std::unique_ptr<TicTacToe3> ttt;
+TEST_CASE("Test win by first column tictactoe 3"){
+	std::unique_ptr<TicTacToe> ttt;
+	ttt = std::make_unique<TicTacToe3>();
 	ttt->start_game("X");
 	ttt->mark_board(1);
 	REQUIRE(ttt->game_over() == false);
@@ -69,8 +71,9 @@ TEST_CASE("Test win by first column"){
 	REQUIRE(ttt->get_winner() == "X");
 }
 
-TEST_CASE("Test win by second column"){
-	std::unique_ptr<TicTacToe3> ttt;
+TEST_CASE("Test win by second column tictactoe 3"){
+	std::unique_ptr<TicTacToe> ttt;
+	ttt = std::make_unique<TicTacToe3>();
 	ttt->start_game("X");
 	ttt->mark_board(2);
 	REQUIRE(ttt->game_over() == false);
@@ -85,8 +88,9 @@ TEST_CASE("Test win by second column"){
 	REQUIRE(ttt->get_winner() == "X");
 }
 
-TEST_CASE("Test win by third column"){
-	std::unique_ptr<TicTacToe3> ttt;
+TEST_CASE("Test win by third column tictactoe 3"){
+	std::unique_ptr<TicTacToe> ttt;
+	ttt = std::make_unique<TicTacToe3>();
 	ttt->start_game("X");
 	ttt->mark_board(3);
 	REQUIRE(ttt->game_over() == false);
@@ -102,8 +106,9 @@ TEST_CASE("Test win by third column"){
 }
 
 
-TEST_CASE("Test win by first row"){
-	std::unique_ptr<TicTacToe3> ttt;
+TEST_CASE("Test win by first row tictactoe 3"){
+	std::unique_ptr<TicTacToe> ttt;
+	ttt = std::make_unique<TicTacToe3>();
 	ttt->start_game("X");
 	ttt->mark_board(1);
 	REQUIRE(ttt->game_over() == false);
@@ -118,8 +123,9 @@ TEST_CASE("Test win by first row"){
 	REQUIRE(ttt->get_winner() == "X");
 }
 
-TEST_CASE("Test win by second row"){
-	std::unique_ptr<TicTacToe3> ttt;
+TEST_CASE("Test win by second row tictactoe 3"){
+	std::unique_ptr<TicTacToe> ttt;
+	ttt = std::make_unique<TicTacToe3>();
 	ttt->start_game("X");
 	ttt->mark_board(4);
 	REQUIRE(ttt->game_over() == false);
@@ -134,8 +140,9 @@ TEST_CASE("Test win by second row"){
 	REQUIRE(ttt->get_winner() == "X");
 }
 
-TEST_CASE("Test win by third row"){
-	std::unique_ptr<TicTacToe3> ttt;
+TEST_CASE("Test win by third row tictactoe 3"){
+	std::unique_ptr<TicTacToe> ttt;
+	ttt = std::make_unique<TicTacToe3>();
 	ttt->start_game("X");
 	ttt->mark_board(7);
 	REQUIRE(ttt->game_over() == false);
@@ -150,8 +157,9 @@ TEST_CASE("Test win by third row"){
 	REQUIRE(ttt->get_winner() == "X");
 }
 
-TEST_CASE("Test win by diagonally from top left"){
-	std::unique_ptr<TicTacToe3> ttt;
+TEST_CASE("Test win by diagonally from top left tictactoe 3"){
+	std::unique_ptr<TicTacToe> ttt;
+	ttt = std::make_unique<TicTacToe3>();
 	ttt->start_game("X");
 	ttt->mark_board(1);
 	REQUIRE(ttt->game_over() == false);
@@ -166,8 +174,9 @@ TEST_CASE("Test win by diagonally from top left"){
 	REQUIRE(ttt->get_winner() == "X");
 }
 
-TEST_CASE("Test win by diagonally from bottom left"){
-	std::unique_ptr<TicTacToe3> ttt;
+TEST_CASE("Test win by diagonally from bottom left tictactoe 3"){
+	std::unique_ptr<TicTacToe> ttt;
+	ttt = std::make_unique<TicTacToe3>();
 	ttt->start_game("X");
 	ttt->mark_board(7);
 	REQUIRE(ttt->game_over() == false);
@@ -178,6 +187,218 @@ TEST_CASE("Test win by diagonally from bottom left"){
 	ttt->mark_board(6);
 	REQUIRE(ttt->game_over() == false);
 	ttt->mark_board(3);
+	REQUIRE(ttt->game_over()==true);
+	REQUIRE(ttt->get_winner() == "X");
+}
+
+TEST_CASE("Test win by first column tictactoe 4"){
+	std::unique_ptr<TicTacToe> ttt;
+	ttt = std::make_unique<TicTacToe4>();
+	ttt->start_game("X");
+	ttt->mark_board(1);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(4);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(5);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(12);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(9);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(10);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(13);
+	REQUIRE(ttt->game_over()==true);
+	REQUIRE(ttt->get_winner() == "X");
+}
+
+TEST_CASE("Test win by second column tictactoe 4"){
+	std::unique_ptr<TicTacToe> ttt;
+	ttt = std::make_unique<TicTacToe4>();
+	ttt->start_game("X");
+	ttt->mark_board(2);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(1);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(6);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(4);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(10);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(11);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(14);
+	REQUIRE(ttt->game_over()==true);
+	REQUIRE(ttt->get_winner() == "X");
+}
+
+TEST_CASE("Test win by third column tictactoe 4"){
+	std::unique_ptr<TicTacToe> ttt;
+	ttt = std::make_unique<TicTacToe4>();
+	ttt->start_game("X");
+	ttt->mark_board(3);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(4);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(7);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(9);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(11);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(13);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(15);
+	REQUIRE(ttt->game_over()==true);
+	REQUIRE(ttt->get_winner() == "X");
+}
+
+TEST_CASE("Test win by fourth column tictactoe 4"){
+	std::unique_ptr<TicTacToe> ttt;
+	ttt = std::make_unique<TicTacToe4>();
+	ttt->start_game("X");
+	ttt->mark_board(4);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(5);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(8);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(11);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(12);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(13);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(16);
+	REQUIRE(ttt->game_over()==true);
+	REQUIRE(ttt->get_winner() == "X");
+}
+
+
+
+TEST_CASE("Test win by first row tictactoe 4"){
+	std::unique_ptr<TicTacToe> ttt;
+	ttt = std::make_unique<TicTacToe4>();
+	ttt->start_game("X");
+	ttt->mark_board(1);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(5);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(2);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(6);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(3);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(7);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(4);
+	REQUIRE(ttt->game_over()==true);
+	REQUIRE(ttt->get_winner() == "X");
+}
+
+TEST_CASE("Test win by second row tictactoe 4"){
+	std::unique_ptr<TicTacToe> ttt;
+	ttt = std::make_unique<TicTacToe4>();
+	ttt->start_game("X");
+	ttt->mark_board(5);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(3);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(6);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(9);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(7);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(13);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(8);
+	REQUIRE(ttt->game_over()==true);
+	REQUIRE(ttt->get_winner() == "X");
+}
+
+TEST_CASE("Test win by third row tictactoe 4"){
+	std::unique_ptr<TicTacToe> ttt;
+	ttt = std::make_unique<TicTacToe4>();
+	ttt->start_game("X");
+	ttt->mark_board(9);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(1);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(10);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(12);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(11);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(15);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(12);
+	REQUIRE(ttt->game_over()==true);
+	REQUIRE(ttt->get_winner() == "X");
+}
+
+TEST_CASE("Test win by fouth row tictactoe 4"){
+	std::unique_ptr<TicTacToe> ttt;
+	ttt = std::make_unique<TicTacToe4>();
+	ttt->start_game("X");
+	ttt->mark_board(13);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(1);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(14);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(12);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(15);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(8);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(16);
+	REQUIRE(ttt->game_over()==true);
+	REQUIRE(ttt->get_winner() == "X");
+}
+
+TEST_CASE("Test win by diagonally from top left tictactoe3"){
+	std::unique_ptr<TicTacToe> ttt;
+	ttt = std::make_unique<TicTacToe4>();
+	ttt->start_game("X");
+	ttt->mark_board(1);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(3);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(6);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(12);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(11);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(8);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(16);
+	REQUIRE(ttt->game_over()==true);
+	REQUIRE(ttt->get_winner() == "X");
+}
+
+TEST_CASE("Test win by diagonally from bottom left tictactoe 4"){
+	std::unique_ptr<TicTacToe> ttt;
+	ttt = std::make_unique<TicTacToe4>();
+	ttt->start_game("X");
+	ttt->mark_board(4);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(12);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(7);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(9);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(10);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(8);
+	REQUIRE(ttt->game_over() == false);
+	ttt->mark_board(13);
 	REQUIRE(ttt->game_over()==true);
 	REQUIRE(ttt->get_winner() == "X");
 }

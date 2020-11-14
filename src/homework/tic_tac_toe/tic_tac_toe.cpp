@@ -106,9 +106,9 @@ void operator<<(std::ostream& out, TicTacToe& ttt) {
     cout<<ttt.pegs[6]<<"|"<<ttt.pegs[7]<<"|"<<ttt.pegs[8]<<"\n";
     }
     else if (ttt.pegs.size() == 16) {
-    cout<<ttt.pegs[0]<<"|"<<ttt.pegs[1]<<"|"<<ttt.pegs[2]<<ttt.pegs[3]<<"\n";
-    cout<<ttt.pegs[4]<<"|"<<ttt.pegs[5]<<"|"<<ttt.pegs[6]<<ttt.pegs[7]<<"\n";
-    cout<<ttt.pegs[8]<<"|"<<ttt.pegs[9]<<"|"<<ttt.pegs[10]<<ttt.pegs[11]<<"\n";
-    cout<<ttt.pegs[12]<<"|"<<ttt.pegs[13]<<"|"<<ttt.pegs[14]<<ttt.pegs[115]<<"\n";
+    cout<<ttt.pegs[0]<<"|"<<ttt.pegs[1]<<"|"<<ttt.pegs[2]<<"|"<<ttt.pegs[3]<<"\n";
+    cout<<ttt.pegs[4]<<"|"<<ttt.pegs[5]<<"|"<<ttt.pegs[6]<<"|"<<ttt.pegs[7]<<"\n";
+    cout<<ttt.pegs[8]<<"|"<<ttt.pegs[9]<<"|"<<ttt.pegs[10]<<"|"<<ttt.pegs[11]<<"\n";
+    cout<<ttt.pegs[12]<<"|"<<ttt.pegs[13]<<"|"<<ttt.pegs[14]<<"|"<<ttt.pegs[115]<<"\n";
     }
 };
